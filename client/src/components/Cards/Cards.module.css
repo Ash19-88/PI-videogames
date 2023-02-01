@@ -1,0 +1,56 @@
+/* * {
+  margin: 0;
+} */
+
+.filtersContainer{
+  display: flex;
+  justify-items:flex-start;
+  justify-content: space-around;
+}
+
+.orderAlpha {
+  margin-top: 107px;
+  margin-bottom: 1px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  border: 2px solid rgb(197, 82, 220);
+  border-radius: 6px;
+  color: rgb(72, 21, 72);
+  font-family: "Teko", sans-serif;
+  letter-spacing: 0.35mm;
+  font-size: 18px;
+}
+
+.orderRating {
+  margin-top: 107px;
+  transition-duration: 0.4s;
+  text-decoration: none;
+  border: 2px solid rgb(197, 82, 220);
+  border-radius: 6px;
+  color: rgb(72, 21, 72);
+  font-family: "Teko", sans-serif;
+  letter-spacing: 0.35mm;
+  font-size: 18px;
+}
+
+.optionGenre {
+    margin-top: 107px;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    border: 2px solid rgb(197, 82, 220);
+    border-radius: 6px;
+    color: rgb(72, 21, 72);
+    font-family: "Teko", sans-serif;
+    letter-spacing: 0.35mm;
+    font-size: 18px;
+}
+
+
+.cardBox{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 25px 0 0 0;
+}

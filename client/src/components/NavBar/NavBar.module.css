@@ -1,0 +1,67 @@
+.nav {
+  background-image: url("../../images/spirals.jpg");
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
+  margin: 0 !important;
+}
+ .btns{
+  display: flex;
+  justify-items:flex-start;
+  justify-content: space-around;
+ }
+
+.btnNav {
+  cursor: pointer;
+  transition-duration: 0.3s;
+  text-decoration: none;
+  color: #ffffff;
+  border: 2px solid white;
+  border-radius: 6px;
+  font-family: "Teko", sans-serif;
+  letter-spacing: 0.35mm;
+  padding: 1px 4px 1px 4px;
+  margin-bottom: 10px;
+  right: 0;
+  font-size: 18px;
+  background-color: rgb(62, 7, 150);
+  text-shadow: 0 0 50px rgb(255, 255, 255), 0 0 50px rgb(255, 255, 255),
+    0 0 50px rgb(255, 255, 255), 0 0 50px rgb(255, 255, 255);
+  box-shadow: 0 0 5px rgb(255 240 243),
+  0 0 10px rgb(255 204 213),
+  0 0 15px rgb(255, 179, 255),
+  0 0 20px rgb(251, 143, 255),
+  0 0 25px rgb(246, 117, 255),
+  0 0 30px rgb(234, 77, 255);
+}
+
+.btnNav:hover {
+  cursor: pointer;
+  color: white;
+  background-color: rgb(46, 4, 99);
+  text-shadow: 0 0 0.1mm rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255),
+  0 0 30px rgb(255, 255, 255), 0 0 80px rgb(255, 255, 255);
+  box-shadow: 0 0 5px rgb(247, 240, 255),
+  0 0 10px rgb(255 204 213),
+  0 0 15px rgb(222, 179, 255),
+  0 0 20px rgb(199, 143, 255),
+  0 0 25px rgb(207, 117, 255),
+  0 0 30px rgb(169, 77, 255);
+} 
+
+.h {
+  margin-top: 2mm;
+  margin-bottom: 2mm;
+}
+
+.videogames {
+  color: white;
+  font-family: "Teko", sans-serif;
+  font-size: 30px;
+  margin: 0 !important;
+  letter-spacing: 8mm;
+  text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255),
+    0 0 30px rgb(255, 255, 255), 0 0 50px rgb(255, 255, 255);
+}

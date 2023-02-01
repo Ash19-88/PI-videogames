@@ -1,0 +1,84 @@
+.div{
+  position: relative;
+  padding: 0;
+}
+
+.pages{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 0;
+  padding-right: 50px;
+  padding-left: 50px;
+  color: rgb(0, 0, 0);
+  list-style: none;
+  font-size: 30px;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  
+}
+.buttonPage{
+  user-select: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(250, 250, 250);
+  backdrop-filter: blur(7px);
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10%;
+  padding-right: 3px;
+  padding-left: 3px;
+  font-weight:1000;
+  text-shadow: 1px 1px 10px rgb(210, 123, 230);
+  box-shadow:  0 0 1px 0 rgb(234, 0, 255) inset, 0 0 1px 0 rgb(234, 0, 255), 0 0 1px 0 rgb(234, 0, 255) inset,
+  0 0 5px 0 rgb(234, 0, 255);
+}
+.buttonPage:hover{
+  user-select: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(250, 250, 250);
+  backdrop-filter: blur(7px);
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10%;
+  padding-right: 3px;
+  padding-left: 3px;
+  font-weight:1000;
+  text-shadow: 0 0 0.1mm rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255),
+  0 0 30px rgb(255, 255, 255), 0 0 80px rgb(255, 255, 255);
+  box-shadow:   0 0 5px rgb(255 240 243),
+  0 0 10px rgb(255 204 213),
+  0 0 15px rgb(255, 179, 255),
+  0 0 20px rgb(251, 143, 255),
+  0 0 25px rgb(246, 117, 255),
+  0 0 30px rgb(234, 77, 255);
+}
+
+.active {
+  position: absolute;
+  user-select: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: rgb(250, 250, 250);
+  backdrop-filter: blur(7px);
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 10%;
+  padding-right: 3px;
+  padding-left: 3px;
+  font-weight:1000;
+  text-shadow: 1px 1px 10px rgb(210, 123, 230);
+  box-shadow:   0 0 5px rgb(255 240 243),
+  0 0 10px rgb(255 204 213),
+  0 0 15px rgb(255, 179, 255),
+  0 0 20px rgb(251, 143, 255),
+  0 0 25px rgb(246, 117, 255),
+  0 0 30px rgb(234, 77, 255);
+}
+
+.page{
+text-decoration: none;
+font-weight: 1000;
+text-shadow: 1px 1px 10px rgb(206, 114, 229);
+}

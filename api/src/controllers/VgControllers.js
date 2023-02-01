@@ -24,16 +24,13 @@ const getVideogame = async (req, res, next) => {
 };
 
 //To obtain videogame by ID (ex => /videogame/:id)
-const getByID = async (req, res, next) => {
-  const { id } = req.params;
-  let totalIds = await allIds(id);
-
+const getByID = async (req, res) => {
   try {
-    totalIds
-      ? res.send(totalIds)
-      : res.status(404).send("Videogame by ID not found");
+    const { id } = req.params;
+    const totalIds = await allIds(id);
+     res.json(totalIds)
   } catch (error) {
-    next(error);
+    res.status(500).send("Videogame not found by getById")
   }
 };
 
@@ -51,6 +48,7 @@ const newVideogame = async (req, res, next) => {
                 rating,
                 released,
                 platforms : (Object.values(platforms)),
+                genres,
                 description,
                 createdInDb
             })

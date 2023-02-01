@@ -1,5 +1,5 @@
 const axios = require("axios");
-const { Genre,  Videogame } = require("../db");
+const { Genre, Videogame } = require("../db");
 require("dotenv").config();
 const { API_KEY } = process.env;
 
@@ -22,8 +22,8 @@ const getApiInfo = async () => {
           name: vg.name,
           rating: vg.rating,
           released: vg.released,
-          platforms: vg.platforms.map((p) => p.platform.name).join(', '),
-          genres: vg.genres?.map((g) => g.name).join(', '),
+          platforms: vg.platforms.map((p) => p.platform.name).join(", "),
+          genres: vg.genres?.map((g) => g.name).join(", "),
         });
       });
       apiUrl = answer.data.next; //check if this line is neccessary to continue,
@@ -39,13 +39,13 @@ const getApiInfo = async () => {
 const getDbInfo = async () => {
   try {
     return await Videogame.findAll({
-      include: {
+      include: [{
         model: Genre,
         attributes: ["name"],
         through: {
           attributes: [],
         },
-      },
+      }]
     });
   } catch (error) {
     console.log(error);
@@ -70,7 +70,7 @@ const allGenres = async () => {
   try {
     const api = await axios.get(`http://api.rawg.io/api/genres?key=${API_KEY}`);
     //To bring genres from the api
-    const genres = api.data.results.map((genre) => genre.name);
+    const genres = await api.data.results.map((genre) => genre.name);
 
     genres.forEach((g) =>
       Genre.findOrCreate({
@@ -79,61 +79,58 @@ const allGenres = async () => {
         },
       })
     );
-    const searchGenres = await Genre.findAll();
-    return searchGenres;
+    return Genre.findAll();
   } catch (error) {
     console.log(error);
   }
 };
 
 const allIds = async (id) => {
-  let videoId;
-    if(id.includes("-")){
-        //search videogame by ID on Db
-        try {
-            videoId = await Videogame.findByPk(id,{
-              include: [ {
-                model: Genre,
-                attributes: ['name'],
-                through: {
-                    attributes: []
-                }
-              }]
-            })
-        } catch (error) {
-            console.log(error)
-        }
-    }else{
-        try {
-            const apiId = await axios.get(`http://api.rawg.io/api/games/${id}?key=${API_KEY}`);
-           if(apiId){
-            const detail = await apiId.data;
-            // console.log(detail);
-            videoId = {
-                id: detail.id,
-                name: detail.name,
-                background_image: detail.background_image,
-                description: detail.description,
-                rating: detail.rating,
-                released: detail.released,
-                platforms: detail.platforms?.map((e) => e.platform.name).join(', '),
-                genres: detail.genres?.map((e) => e.name).join(', '),
-            };
-            console.log(videoId)
-            return videoId
-           }else{
-            return ("Videogame not found on API")
-           }
-        } catch (error) {
-            console.log(error)
-        }
+
+  if (isNaN(id)) {
+    try {
+      const vgFromDb = await Videogame.findByPk(id, {
+        include: {
+          model: Genre,
+          attributes: ['name'],
+          through: {
+            attributes: []
+          }
+        },
+      })
+      return [vgFromDb];
+    } catch (error) {
+      console.log(error, "Error searching vg on Db");
     }
-}
+    // id = parseInt(id);
+  } else {
+    /*  Searching by ID on API */
+
+    try {
+      const vgAPI = await axios.get(
+        `http://api.rawg.io/api/games/${id}?key=${API_KEY}`
+      );
+      vgApiobj = {
+        id: vgAPI.data.id,
+        background_image: vgAPI.data.background_image,
+        name: vgAPI.data.name,
+        rating: vgAPI.data.rating,
+        description: vgAPI.data.description,
+        released: vgAPI.data.released,
+        platforms: vgAPI.data.platforms.map((p) => p.platform.name),
+        genres: vgAPI.data.genres?.map((g) => g.name).join(", ").toString(),
+      };
+      return [vgApiobj];
+    } catch (error) {
+      console.log(error, "Error searching on API");
+    }
+  }
+};
 
 module.exports = {
   getApiInfo,
   getApiInfo,
   getAllInfo,
   allGenres,
-  allIds
+  allIds,
 };

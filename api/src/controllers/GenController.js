@@ -6,7 +6,6 @@ const getGenres = async (req, res, next) => {
         let genres = await allGenres();
         genres.map((genre) => {
             return {
-                id: genre.id,
                 name: genre.name,
             }
         });

@@ -1,0 +1,228 @@
+.div{
+  background: url('../../images/spirals.jpg');
+}
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-family: "Teko", serif;
+  color: whitesmoke;
+  letter-spacing: 3px;
+}
+
+.form {
+  background: rgb(205, 152, 205);
+  padding: 45px 0;
+  border-radius: 10px;
+  box-shadow: 
+  0 0 5px rgb(255 240 243),
+  0 0 10px rgb(255 204 213),
+  0 0 15px rgb(255, 179, 255),
+  0 0 20px rgb(251, 143, 255),
+  0 0 25px rgb(246, 117, 255),
+  0 0 30px rgb(234, 77, 255);
+  height: auto;
+  display: inline-block;
+  margin-top: 20px;
+
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+}
+
+.group {
+  position: relative;
+  margin: 45px;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+
+.input {
+  background: none;
+  color: #c6c6c6;
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #49454567;
+}
+
+.input:focus {
+  outline: none;
+  color: #545353
+}
+
+.label {
+  color: white;
+  font-family: monospace;
+  font-size: 18px;
+  position: absolute;
+  top: -5px;
+  left: 5px;
+  transition: 0.5s all;
+  pointer-events: none;
+}
+
+.input:focus~.label,
+.input:valid~.label {
+  top: -14px;
+  font-size: 15px;
+  color: #3e4f5f;
+}
+
+textarea {
+  width: 470px;
+  max-width: 470px;
+  height: 110px;
+  max-height: 120px;
+  padding: 10px;
+  
+  background: transparent;
+  outline: none;
+  
+  color: whitesmoke;
+  font-family: monospace;
+  font-size: 0.875em;
+  
+  border: solid 2px #49454567;
+}
+
+.description {
+  color: white;
+  font-family: monospace;
+  font-size: 18px;
+  position: absolute;
+  top: -25px;
+  left: 5px;
+  transition: 0.5s all;
+  pointer-events: none;
+}
+
+textarea:focus~.label,
+textarea:valid~.label{
+  top: -30px;
+  font-size: 15px;
+  color: black;
+}
+
+.bar{
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.bar::before{
+  content: "";
+  height: 2px;
+  width: 0%;
+  bottom: 0;
+  position: absolute;
+  background: linear-gradient(to right, #B06AB3, #4568DC);
+  transition: 0.3s ease width;
+  left: 0;
+}
+
+.input:focus~.bar::before{
+  width: 100%;
+}
+
+.submit{
+  font-family: system-ui;
+  background: #6D6875;
+  border: 1px solid;
+  display: block;
+  width: 80%;
+  margin: 10px auto;
+  color: #fff;
+  height: 40px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 
+  0 0 5px rgb(255 240 243),
+  0 0 10px rgb(255 204 213),
+  0 0 15px rgb(255, 179, 255),
+  0 0 20px rgb(251, 143, 255),
+  0 0 25px rgb(246, 117, 255),
+  0 0 30px rgb(234, 77, 255);
+}
+
+.select {
+  background-color: #FFCDB2;
+  color: black;
+  padding: 7px;
+  font-size: 16px;
+  appearance: button;
+  outline: none;
+  margin: 10px;
+  font-family: system-ui;
+}
+
+.select .option {
+  padding: 30px;
+}
+
+.error {
+    color: #d90429;
+    line-height: 0px;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.map {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  background-color: #fbb1bd;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.option_title {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.btnx {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  padding: 0;
+  height: 20px;
+  background: #a4133c;
+}
+
+.x {
+    color: white;
+}
+
+.home {
+  margin-top: 20px;
+}
+
+.back {
+  border-radius: 8px;
+  padding: 8px;
+  text-decoration: none;
+  font-family: system-ui;
+  background: #6D6875;
+  border: 1px solid;
+  display: block;
+  width: 20%;
+  margin: 10px auto;
+  color: #fff;
+  height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 
+  0 0 5px rgb(255 240 243),
+  0 0 10px rgb(255 204 213),
+  0 0 15px rgb(255, 179, 255),
+  0 0 20px rgb(251, 143, 255),
+  0 0 25px rgb(246, 117, 255),
+  0 0 30px rgb(234, 77, 255);
+  font-weight: 400;
+}
