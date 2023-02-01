@@ -8,54 +8,67 @@
   transition-duration: 0.4s;
   text-decoration: none;
   border: 2px solid white;
-  font-size: 16px;
+  padding: 1px 4px 1px 4px;
+  font-size: 18px;
   color: white;
   margin-top: 0;
-  padding: 2px;
   border-radius: 6px;
   margin-bottom: 5px;
   font-family: "Teko", serif;
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.055);
-  text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255),
-    0 0 30px rgb(255, 255, 255), 0 0 50px rgb(255, 255, 255);
 }
+.search:hover{
+  cursor: pointer;
+  color: white;
+  background-color: rgb(46, 4, 99);
+  box-shadow: 0 0 5px rgb(247, 240, 255),
+  0 0 10px rgb(255 204 213),
+  0 0 15px rgb(222, 179, 255),
+  0 0 20px rgb(199, 143, 255),
+  0 0 25px rgb(207, 117, 255),
+  0 0 30px rgb(169, 77, 255);
+}
+
 .search::placeholder {
   color: white;
+  font-size: 15px;
   text-decoration: none;
-  background-color: transparent;
   letter-spacing: 0.55mm;
+  padding: 1px 4px 1px 4px;
   text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255),
     0 0 30px rgb(255, 255, 255), 0 0 50px rgb(255, 255, 255);
-  box-shadow: inset 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255);
+ 
 }
 
 .buttonSearch {
-  font-family: "Teko", serif;
-  font-size: 16px;
-  border-radius: 6px !important;
   cursor: pointer;
-  /* padding: 0.5mm; */
-  transition-duration: 0.4s;
+  transition-duration: 0.3s;
   text-decoration: none;
-  border: 2.1px solid white;
+  color: #ffffff;
+  border: 2px solid white;
+  border-radius: 6px;
+  font-family: "Teko", sans-serif;
+  letter-spacing: 0.35mm;
   padding: 2px;
-  letter-spacing: 1mm;
-  color: black;
-  font-weight: bold;
-  backdrop-filter: blur(10px);
-  background-color: rgba(245, 245, 245, 0.722);
-  text-shadow: 0 0 5px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255),
-    0 0 30px rgb(255, 255, 255), 0 0 50px rgb(255, 255, 255);
-  box-shadow: inset 0 0 5px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255);
+  padding: 1px 4px 1px 4px;
+  /* margin-bottom: 10px; */
+  padding: 2px;
+  right: 0;
+  font-size: 18px;
+  background-color: rgba(62, 7, 150, 0.537);
 }
 
 .buttonSearch:hover {
-    color: white;
-    box-shadow: 0 0 10px 0 cyan inset,0 0 10px 0 cyan,
-    0 0 10px 0 cyan inset,0 0 10px 0 cyan;
-    text-shadow: 0 0 5px cyan;
-  background-color: black;
+  cursor: pointer;
+  color: white;
+  background-color: rgba(47, 4, 99, 0.85);
+  text-shadow: 0 0 0.1mm rgb(255, 255, 255), 0 0 10px rgb(255, 255, 255),
+  0 0 30px rgb(255, 255, 255), 0 0 80px rgb(255, 255, 255);
+  box-shadow: 0 0 5px rgb(247, 240, 255),
+  0 0 10px rgb(255 204 213),
+  0 0 15px rgb(222, 179, 255),
+  0 0 20px rgb(199, 143, 255),
+  0 0 25px rgb(207, 117, 255),
+  0 0 30px rgb(169, 77, 255);
 }
-
-/* ver si cambio el cyan por el color de la landing */

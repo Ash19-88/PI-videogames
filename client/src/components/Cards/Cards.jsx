@@ -134,7 +134,7 @@ export default function Cards() {
             );
           })
         ) : (
-          <div className={style.loading}><img alt="loading"/></div>
+              <span className={style.loader}></span>
         )}
       </div>
     </div>

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { getDetail } from "../../redux/actions";
 import style from "../Details/Detail.module.css";
+import videogames from "../../images/videogames.png";
 
 export default function Detail() {
   const { id } = useParams();
@@ -13,7 +14,7 @@ export default function Detail() {
   }, [dispatch, id]);
 
   const shownVg = useSelector((state) => state.detail);
-  console.log(shownVg);
+  
 
   return (
     <div className={style.detailContainer}>
@@ -37,10 +38,12 @@ export default function Detail() {
         </div>
         </div>
         <div className={style.right}>
+          {shownVg[0].background_image > 0 ? (
         <img src={shownVg[0].background_image || "image not found"} alt={`${shownVg[0].name}`} width="275vh" className={style.image} />
+          ): <img alt="default" src={videogames} />}
         </div>
       </div>
-    ):(<h2>...Loading...</h2>)}
+    ):(<span className={style.loader}></span>)}
     </div>
   );
 };
