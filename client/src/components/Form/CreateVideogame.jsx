@@ -8,7 +8,7 @@ const validate = (input) => {
   let error = {};
   /* using Regular Expresions to validate the appropiate use */
   let validName = /^[a-zA-Z\s]+$/;
-  let validUrl = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/;
+  let validUrl = /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|jpeg)/;
 
   if (!input.name.length) {
     error.name = "This field cannot be empty";
@@ -42,6 +42,7 @@ const validate = (input) => {
   if (!input.rating.length) {
     error.rating = "This field cannot be empty";
   }
+  
   if (input.rating < 1 || input.rating > 5) {
     error.rating = "Rating must be between 1 and 5";
   }
@@ -173,7 +174,8 @@ export default function CreateVideogame() {
       <form className={style.form} onSubmit={(e) => handleSubmit(e)}>
         <div className={style.container}>
           <h1 className={style.title}> Create your Videogame </h1>
-
+          <div className={style.boxCreate}>
+          <div className={style.left}>
           <div className={style.group}>
             <input
               type="text"
@@ -196,6 +198,7 @@ export default function CreateVideogame() {
               onChange={handleChange}
               className={style.input}
             />
+            <span className={style.bar}></span>
             <label className={style.label}> Add an image URL</label>
             {error.background_image && (
               <p className={style.error}>{error.background_image}</p>
@@ -214,6 +217,7 @@ export default function CreateVideogame() {
               onChange={handleChange}
               autoComplete="off"
             />
+            <span className={style.bar}></span>
             <label className={style.label}>Released: </label>
             {error.released && <p className={style.error}>{error.released}</p>}
           </div>
@@ -228,10 +232,13 @@ export default function CreateVideogame() {
               name="rating"
               onChange={handleChange}
             />
+            <span className={style.bar}></span>
             <label className={style.label}>Rating: </label>
             {error.rating && <p className={style.error}>{error.rating}</p>}
           </div>
+          </div>
 
+          <div className={style.right}>
           <div className={style.group}>
             <select
               onChange={(e) => handleSelectPlatform(e)}
@@ -303,14 +310,16 @@ export default function CreateVideogame() {
               <p className={style.error}>{error.description}</p>
             )}
           </div>
-          
+            </div>
+            </div>
+            
           <div>
           <button onSubmit={handleSubmit} className={style.submit}>
             CREATE VIDEOGAME
           </button>
           </div>
           <div className={style.home}>
-          <Link to="/home" onClick={(e) => handleRefresh(e)}>
+          <Link to="/home" style={{textDecoration: "none"}}  onClick={(e) => handleRefresh(e)}>
             <button className={style.back}> CANCEL </button>
           </Link>
           </div>

@@ -117,3 +117,12 @@ export function setPage(payload){
     })
   }
 }
+
+export function cleanDetail() {
+  return function (dispatch) {
+    return (dispatch) ({
+      type: "CLEAN_DETAIL",
+      detail: []
+    })
+  }
+}

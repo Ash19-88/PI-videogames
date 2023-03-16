@@ -72,13 +72,14 @@ const allGenres = async () => {
     //To bring genres from the api
     const genres = await api.data.results.map((genre) => genre.name);
 
-    genres.forEach((g) =>
+    genres.map((g) =>
       Genre.findOrCreate({
         where: {
           name: g,
         },
       })
     );
+    
     return Genre.findAll();
   } catch (error) {
     console.log(error);

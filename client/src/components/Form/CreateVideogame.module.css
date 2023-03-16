@@ -10,19 +10,20 @@
 }
 
 .form {
-  background: rgb(205, 152, 205);
+  background: rgb(180, 54, 180);
   padding: 45px 0;
-  border-radius: 10px;
+  border-radius: 20px;
   box-shadow: 
-  0 0 5px rgb(255 240 243),
-  0 0 10px rgb(255 204 213),
-  0 0 15px rgb(255, 179, 255),
-  0 0 20px rgb(251, 143, 255),
-  0 0 25px rgb(246, 117, 255),
-  0 0 30px rgb(234, 77, 255);
+  0 0 5px rgb(254, 240, 255),
+  0 0 10px rgb(247, 210, 250),
+  0 0 15px rgb(245, 169, 250),
+  0 0 20px rgb(234, 129, 248),
+  0 0 25px rgb(225, 86, 250),
+  0 0 30px rgb(233, 22, 248);
   height: auto;
   display: inline-block;
   margin-top: 20px;
+  margin-bottom: 2%;
 
 }
 
@@ -30,7 +31,10 @@
   width: 100%;
   margin: auto;
 }
-
+.boxCreate{
+  display: flex;
+  flex-direction: row;
+}
 .group {
   position: relative;
   margin: 45px;
@@ -46,57 +50,67 @@
   display: block;
   width: 100%;
   border: none;
-  border-bottom: 1px solid #49454567;
+  border-bottom: 1px solid #6b666667;
+  margin-top: 8%;
 }
 
 .input:focus {
   outline: none;
-  color: #545353
+  color:rgb(247, 210, 250);
+ 
 }
 
 .label {
-  color: white;
-  font-family: monospace;
+  font-family: 'Teko', serif;
   font-size: 18px;
   position: absolute;
-  top: -5px;
+  top: -12px;
   left: 5px;
   transition: 0.5s all;
   pointer-events: none;
+  letter-spacing: 2px;
+  color:rgb(247, 210, 250);
 }
 
 .input:focus~.label,
-.input:valid~.label {
+.input:valid~l.abel {
   top: -14px;
   font-size: 15px;
-  color: #3e4f5f;
+  color: rgb(247, 210, 250);
+
 }
 
 textarea {
-  width: 470px;
+  width: 350px;
   max-width: 470px;
   height: 110px;
   max-height: 120px;
   padding: 10px;
-  
   background: transparent;
   outline: none;
-  
   color: whitesmoke;
-  font-family: monospace;
-  font-size: 0.875em;
-  
-  border: solid 2px #49454567;
+  font-weight: 500;
+  font-family: 'Teko', serif;
+  letter-spacing: 2px;
+  font-size: 0.9em;  
+  border: solid 2px whitesmoke;
+  border-radius: 15px;
+}
+textarea::placeholder{
+  color: whitesmoke;
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 .description {
-  color: white;
-  font-family: monospace;
+  color: rgb(247, 210, 250);
+  font-family: 'Teko', serif;
   font-size: 18px;
+  letter-spacing: 2px;
   position: absolute;
   top: -25px;
   left: 5px;
-  transition: 0.5s all;
+  transition: 0.3s all;
   pointer-events: none;
 }
 
@@ -104,7 +118,7 @@ textarea:focus~.label,
 textarea:valid~.label{
   top: -30px;
   font-size: 15px;
-  color: black;
+  color: #fff;
 }
 
 .bar{
@@ -119,7 +133,7 @@ textarea:valid~.label{
   width: 0%;
   bottom: 0;
   position: absolute;
-  background: linear-gradient(to right, #B06AB3, #4568DC);
+  background: linear-gradient(to right, #dc55e0, #3961e6);
   transition: 0.3s ease width;
   left: 0;
 }
@@ -129,15 +143,17 @@ textarea:valid~.label{
 }
 
 .submit{
-  font-family: system-ui;
-  background: #6D6875;
+  font-family: 'Teko', serif;
+  letter-spacing: 2px;
+  background: linear-gradient(to right, #dc24e2, #3961e6);
   border: 1px solid;
+  border-radius: 8px;
   display: block;
-  width: 80%;
+  width: 40%;
   margin: 10px auto;
   color: #fff;
   height: 40px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 500;
   cursor: pointer;
   box-shadow: 
@@ -147,35 +163,49 @@ textarea:valid~.label{
   0 0 20px rgb(251, 143, 255),
   0 0 25px rgb(246, 117, 255),
   0 0 30px rgb(234, 77, 255);
+  margin-bottom: 5%;
 }
-
+.submit:hover{
+  background: transparent;
+  cursor: pointer;
+}
 .select {
-  background-color: #FFCDB2;
-  color: black;
+  background: linear-gradient(to right, #dc55e0, #3961e6);
+  box-shadow: 
+  0 0 5px rgb(255 240 243);
+  color: #fff;
   padding: 7px;
   font-size: 16px;
   appearance: button;
   outline: none;
   margin: 10px;
   font-family: system-ui;
+  border: 1px solid;
+  border-radius: 8px;
 }
 
 .select .option {
   padding: 30px;
+  color: #dc55e0;
 }
 
 .error {
-    color: #d90429;
+    color: #ee092f;
     line-height: 0px;
     font-size: 12px;
     margin-top: 10px;
+    letter-spacing: 1px;
+    font-weight: 600;
 }
 
 .map {
   display: inline-block;
   margin-right: 10px;
   margin-bottom: 15px;
-  background-color: #fbb1bd;
+  background:  #ffffffa8;
+  box-shadow: 
+  0 0 5px rgb(255 240 243);
+  color: #a30da8;
   padding: 5px;
   border-radius: 5px;
 }
@@ -183,7 +213,9 @@ textarea:valid~.label{
 .option_title {
   display: inline-block;
   margin-right: 10px;
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
 }
 
 .btnx {
@@ -192,11 +224,15 @@ textarea:valid~.label{
   text-align: center;
   padding: 0;
   height: 20px;
-  background: #a4133c;
+  background: rgb(250, 4, 4);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .x {
-    color: white;
+    color: #ffff;
+    font-weight: 700;
 }
 
 .home {
@@ -207,8 +243,8 @@ textarea:valid~.label{
   border-radius: 8px;
   padding: 8px;
   text-decoration: none;
-  font-family: system-ui;
-  background: #6D6875;
+  font-family: 'Teko', serif;
+  letter-spacing: 2px;
   border: 1px solid;
   display: block;
   width: 20%;
@@ -225,4 +261,10 @@ textarea:valid~.label{
   0 0 25px rgb(246, 117, 255),
   0 0 30px rgb(234, 77, 255);
   font-weight: 400;
+  background: #0d91a8;;
+  border: 1px solid;
+}
+.back:hover{
+  background: transparent;
+  cursor: pointer;
 }

@@ -86,13 +86,19 @@ function rootReducer(state = initialState, action) {
         };
       case "CREATE_VIDEOGAME":
         return{
-          ...state    //though it's not neccessary.
+          ...state,
+          allVideogames: action.payload
         };
       case "SET_PAGE":
         return {
           ...state,
           currentPage: action.payload
         };
+      case "CLEAN_DETAIL":
+        return{
+          ...state,
+          detail: action.payload
+        }
       default:
       return { ...state };
   }
