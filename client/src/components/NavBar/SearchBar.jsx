@@ -14,7 +14,6 @@ export default function SearchBar() {
     //every time sth its written
     e.preventDefault();
     setName(e.target.value); //to set the value with the input on the local state
-    //console.log(name);
   }
 
   function handleSubmit(e) {

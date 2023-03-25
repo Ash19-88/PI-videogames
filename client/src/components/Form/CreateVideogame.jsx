@@ -139,7 +139,6 @@ export default function CreateVideogame() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(e.data);
     let avoidRepetion = all.filter((n) => n.name === input.name);
     if (avoidRepetion.length !== 0) {
       alert("Please choose another name, it already exists");
