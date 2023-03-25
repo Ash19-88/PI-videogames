@@ -122,7 +122,16 @@ export function cleanDetail() {
   return function (dispatch) {
     return (dispatch) ({
       type: "CLEAN_DETAIL",
-      detail: []
+      payload: []
+    })
+  }
+}
+
+export function cleanState() {
+  return function (dispatch) {
+    return (dispatch) ({
+      type: "CLEAN_STATE",
+      payload: []
     })
   }
 }

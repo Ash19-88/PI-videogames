@@ -60,13 +60,13 @@ export default function Cards() {
   const handlerOrderByName = (e) => {
     dispatch(orderByName(e.target.value));
     dispatch(setPage(1));
-    setOrder(`Ordered ${e.target.value}`);
+    setOrder(!order);
   };
 
   const handlerOrderByRating = (e) => {
     dispatch(orderByRating(e.target.value));
     dispatch(setPage(1));
-    setOrder(`Ordered ${e.target.value}`);
+    setOrder(!order);
   };
 
   return (

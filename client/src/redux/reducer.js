@@ -94,10 +94,15 @@ function rootReducer(state = initialState, action) {
           ...state,
           currentPage: action.payload
         };
-      case "CLEAN_DETAIL":
+    case "CLEAN_DETAIL":
+      return {
+        ...state,
+        detail: action.payload
+      };
+    case "CLEAN_STATE":
         return{
           ...state,
-          detail: action.payload
+          videogames: action.payload
         }
       default:
       return { ...state };
