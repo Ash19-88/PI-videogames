@@ -9,8 +9,12 @@ export default function Home(){
     return(
         <>
         <div className={style.mainHome}>
-            <NavBar />
+            <div>
+                <NavBar />
+            </div>
+            <div>
             <Cards />
+              </div>
         </div>
         </>
     );
