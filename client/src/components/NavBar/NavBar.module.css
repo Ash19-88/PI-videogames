@@ -20,7 +20,7 @@
     justify-content: space-evenly;
   }
   .videogames {
-      letter-spacing: 5mm;
+      letter-spacing: 5mm!important;
   }
 }
 .btnNav {
