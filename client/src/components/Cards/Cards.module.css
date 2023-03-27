@@ -7,11 +7,10 @@
   justify-items:flex-start;
   justify-content: space-around;
 }
-@media screen (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .filtersContainer {
-    display: flex;
-  flex-direction: column;
-   border: 2px solid red;
+  flex-wrap: wrap;
+    margin-top: 150px;
   }
 }
 
