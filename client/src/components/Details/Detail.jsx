@@ -40,7 +40,7 @@ export default function Detail() {
         </div>
         </div>
         <div className={style.right}>
-          {shownVg[0].background_image > 0 ? (
+          {shownVg[0].background_image ? (
         <img src={shownVg[0].background_image || "image not found"} alt={`${shownVg[0].name}`} width="275vh" className={style.image} />
           ): <img alt="default" src={videogames} />}
         </div>
