@@ -23,7 +23,8 @@
       letter-spacing: 5mm!important;
   }
   .btnNav{
-  box-shadow:0 0 2px #f7f0ff!important;
+ text-shadow: none!important;
+  box-shadow: none!important;
  }
 }
 .btnNav {
