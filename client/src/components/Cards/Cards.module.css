@@ -7,11 +7,12 @@
   justify-items:flex-start;
   justify-content: space-around;
 }
-@media screen (max-width: 740px) {
-  .filtersContainer {display: flex;
+@media screen (max-width: 480px) {
+  .filtersContainer {
+    display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center}
+   border: 2px solid red;
+  }
 }
 
 .orderAlpha {
