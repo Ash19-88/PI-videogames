@@ -9,6 +9,29 @@
   position: fixed;
   margin: none;
 }
+@media screen and (max-width: 800px){
+  .imageLanding{
+    background-image: url("../../images/videogamesMob.png");
+    object-fit: cover;
+    background-color: black;
+    background-repeat: no-repeat;
+  }
+  .containerTitle{
+    margin-top: 20rem!important;
+  }
+  .titleLanding{
+    font-size: 35px;
+    margin-bottom: 2%;
+  }
+  .btnLanding{
+    font-size: 25px;
+    border-radius: 8px;
+     box-shadow: 0 0 2px rgb(247, 240, 255),
+    0 0 4px rgb(210, 204, 255),
+    0 0 6px rgb(179, 190, 255),
+    0 0 8px rgb(77, 92, 255)!important;
+  }
+}
 .containerTitle{
     margin-top: 30rem;
     display: flex;
