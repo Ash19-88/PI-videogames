@@ -15,7 +15,7 @@
 
 @media screen and (max-width: 800px){
   .btns{
-    flew-wrap: wrap;
+    flex-wrap: wrap;
     justify-items: center;
     justify-content: space-evenly;
   }
