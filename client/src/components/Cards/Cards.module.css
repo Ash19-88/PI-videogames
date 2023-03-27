@@ -9,13 +9,11 @@
 }
 @media screen and (max-width: 800px) {
   .filtersContainer {
-  flex-wrap: wrap;
-  }
-  .orderAlpha{
-    margin-top: 160px;
+    flex-wrap: wrap;
+    margin-top: 60px;
   }
   .optionGenre{
-    margin-top: 
+    margin-top: 20px;
   }
 }
 
