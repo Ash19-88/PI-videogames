@@ -7,15 +7,9 @@ import style from "../Home/Home.module.css";
 
 export default function Home(){
     return(
-        <>
         <div className={style.mainHome}>
-            <div>
-                <NavBar />
-            </div>
-            <div>
+            <NavBar />
             <Cards />
-              </div>
         </div>
-        </>
     );
 }
