@@ -7,6 +7,12 @@
   justify-items:flex-start;
   justify-content: space-around;
 }
+@media screen (max-width: 740px) {
+  .filtersContainer {display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center}
+}
 
 .orderAlpha {
   margin-top: 107px;
