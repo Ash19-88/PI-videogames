@@ -22,6 +22,9 @@
   .videogames {
       letter-spacing: 5mm!important;
   }
+  .btnNav{
+box-shadow: 0 0 2px #fff0f3, 0 0 4px #ffccd5, 0 0 6px #ffb3ff, 0 0 8px #fb8fff, 0 0 10px #f675ff!important;
+ }
 }
 .btnNav {
   cursor: pointer;
