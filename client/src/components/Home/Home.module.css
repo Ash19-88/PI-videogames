@@ -1,4 +1,4 @@
 .mainHome{
   display: flex;
-  flew-direction: column;
+  flex-direction: column;
 }
