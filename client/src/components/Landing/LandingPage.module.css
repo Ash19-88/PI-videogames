@@ -17,15 +17,15 @@
     background-repeat: no-repeat;
   }
   .containerTitle{
-    margin-top: 20rem!important;
+    margin-top: 32rem!important;
   }
   .titleLanding{
-    font-size: 35px;
-    margin-bottom: 2%;
+    font-size: 35px!important;
+    margin-bottom: 2%!important;
   }
   .btnLanding{
-    font-size: 25px;
-    border-radius: 8px;
+    font-size: 25px!important;
+    border-radius: 8px!important;
      box-shadow: 0 0 2px rgb(247, 240, 255),
     0 0 4px rgb(210, 204, 255),
     0 0 6px rgb(179, 190, 255),
