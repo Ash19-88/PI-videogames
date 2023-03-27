@@ -17,6 +17,17 @@
   margin-block-end: 0;
   
 }
+@media screen and (max-width: 800px){
+  .pages{
+    font-size: 20px;
+    padding: 0 1px;
+    margin-block-end: -30px;
+  }
+  .active{
+    box-shadow: 0 0 2px #fff0f3, 0 0 4px #ffccd5, 0 0 6px #ffb3ff, 0 0 8px #fb8fff, 0 0 10px #f675ff;
+    
+}
+
 .buttonPage{
   user-select: none;
   cursor: pointer;
