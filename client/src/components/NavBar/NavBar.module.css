@@ -13,6 +13,11 @@
   justify-content: space-around;
  }
 
+@media screen and (max-width: 800px){
+  .btns{
+    flew-wrap: wrap;
+  }
+}
 .btnNav {
   cursor: pointer;
   transition-duration: 0.3s;
