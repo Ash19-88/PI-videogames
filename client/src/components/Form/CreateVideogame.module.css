@@ -1,5 +1,6 @@
 .div{
   background: url('../../images/spirals.jpg');
+  object-fit: cover;
 }
 .title {
   text-align: center;
