@@ -24,7 +24,7 @@ export default function Detail() {
       <p>Go Back</p>
       </Link>
       </div>
-      {shownVg.length ? (
+      {shownVg.length > 0 ? (
       <div className={style.main}>
         <div className={style.left}>
         <div className={style.info}>
