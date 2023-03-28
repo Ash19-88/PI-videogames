@@ -125,17 +125,9 @@
   0 0 30px rgb(169, 77, 255);
 }
 
-/* .default img{
-  background: url("../../images/videogames.png");
-
-  width: 100%;
-  height: 100%;
-  border: 1px solid rgb(62, 7, 150);
-  border-radius: 0 20px 20px 0;
-} */
 
 .loaderDetail {
-  position: relative;
+  position: absolute;
   width: 120px;
   height: 90px;
   margin-top: 50%;
@@ -222,8 +214,5 @@
   }
   .genres{
     margin-top: 2%!important;
-  }
-  .loaderDetail{
-    margin-top: 40%!important;
   }
 }
