@@ -134,14 +134,14 @@
   border-radius: 0 20px 20px 0;
 } */
 
-.loader {
+.loaderDetail {
   position: relative;
   width: 120px;
   height: 90px;
-  margin-top: 40%;
+  margin-top: 50%;
 }
 
-.loader:before {
+.loaderDetail:before {
   content: "";
   position: absolute;
   bottom: 30px;
@@ -153,7 +153,7 @@
   animation: loading-bounce 0.5s ease-in-out infinite alternate;
 }
 
-.loader:after {
+.loaderDetail:after {
   content: "";
   position: absolute;
   right: 0;
@@ -223,7 +223,7 @@
   .genres{
     margin-top: 2%!important;
   }
-  .loader{
+  .loaderDetail{
     margin-top: 40%!important;
   }
 }

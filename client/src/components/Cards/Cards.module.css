@@ -114,7 +114,7 @@
   position: relative;
   width: 120px;
   height: 90px;
-  margin: 15%;
+  margin-top: 35%;
 }
 
 .loader:before {
