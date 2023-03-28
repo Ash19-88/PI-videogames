@@ -184,7 +184,6 @@ export default function CreateVideogame() {
               onChange={(e) => handleChange(e)}
               className={style.input}
             />{" "}
-            <span className={style.bar}></span>
             <label className={style.label}> Name: </label>
             {error.name && <p className={style.error}>{error.name}</p>}
           </div>
@@ -197,7 +196,6 @@ export default function CreateVideogame() {
               onChange={handleChange}
               className={style.input}
             />
-            <span className={style.bar}></span>
             <label className={style.label}> Add an image URL</label>
             {error.background_image && (
               <p className={style.error}>{error.background_image}</p>
@@ -216,7 +214,6 @@ export default function CreateVideogame() {
               onChange={handleChange}
               autoComplete="off"
             />
-            <span className={style.bar}></span>
             <label className={style.label}>Released: </label>
             {error.released && <p className={style.error}>{error.released}</p>}
           </div>
@@ -231,7 +228,6 @@ export default function CreateVideogame() {
               name="rating"
               onChange={handleChange}
             />
-            <span className={style.bar}></span>
             <label className={style.label}>Rating: </label>
             {error.rating && <p className={style.error}>{error.rating}</p>}
           </div>
@@ -251,7 +247,7 @@ export default function CreateVideogame() {
                   className={style.option}
                 >{p}</option>
               ))}
-            </select> <span className={style.bar}></span>
+            </select>
             <label className={style.label}>Platforms: </label>
             {input.platforms.map((p) => (
               <div className={style.map}>
@@ -280,7 +276,7 @@ export default function CreateVideogame() {
                     className={style.option}
                   >{g.name}</option>
                 ))}
-              </select>  <span className={style.bar}></span>
+              </select>
             <label className={style.label}>Genres: </label>
             {input.genres.map((g) => (
               <div className={style.map}>
@@ -297,6 +293,7 @@ export default function CreateVideogame() {
 
           <div className={style.group}>
             <textarea
+              className={style.textareacr}
               required
               type="text"
               value={input.description}

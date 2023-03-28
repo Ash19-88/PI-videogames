@@ -88,7 +88,7 @@
 
 }
 
-textarea {
+.textareacr {
   width: 350px;
   max-width: 470px;
   height: 110px;
@@ -104,7 +104,7 @@ textarea {
   border: solid 2px whitesmoke;
   border-radius: 15px;
 }
-textarea::placeholder{
+.textareacr::placeholder{
   color: whitesmoke;
   letter-spacing: 2px;
   font-weight: 400;
@@ -122,33 +122,13 @@ textarea::placeholder{
   pointer-events: none;
 }
 
-textarea:focus~.label,
-textarea:valid~.label{
+.textareacr:focus~.label,
+.textareacr:valid~.label{
   top: -30px;
   font-size: 15px;
   color: #fff;
 }
 
-.bar{
-  position: relative;
-  display: block;
-  width: 100%;
-}
-
-.bar::before{
-  content: "";
-  height: 2px;
-  width: 0%;
-  bottom: 0;
-  position: absolute;
-  background: linear-gradient(to right, #dc55e0, #3961e6);
-  transition: 0.3s ease width;
-  left: 0;
-}
-
-.input:focus~.bar::before{
-  width: 100%;
-}
 
 .submit{
   font-family: 'Teko', serif;
@@ -275,4 +255,66 @@ textarea:valid~.label{
 .back:hover{
   background: transparent;
   cursor: pointer;
+}
+
+@media screen and (max-width: 800px){
+  .container{
+    width: 98%!important;
+  }
+  .form{
+    display: flex!important;
+    flex-direction: column!important;
+    flex-wrap: nowrap!important;
+    width: 90%!important;
+    justify-content: center!important;
+    align-items: center!important;
+    margin-left: 5%!important;
+    margin-bottom: 15%!important;
+  }
+  .title{
+    margin-bottom: 5%!important;
+    font-size: 28px!important;
+  }
+  .right{
+    display: flex!important;
+    flex-wrap: nowrap!important;
+    align-items: flex-start!important;
+    justify-content: center!important;
+    flex-direction: column!important;
+  }
+  .group{
+    margin-left: 45px!important;
+    margin-right: 45px!important;
+    margin-top: 5px!important;
+    margin-bottom: 18px!important;
+  }
+  .textareacr{
+    width: 100%!important;
+  }
+  .left{
+    display: flex!important;
+    flex-direction: column!important;
+    justify-content: center!important;
+  }
+  .map{
+    display: flex!important;
+    justify-content: space-between!important;
+    margin-right: 10px!important;
+    margin-left: 20px!important;
+  }
+  .select{
+    margin-top: 18px!important;
+    margin-bottom: 15px!important;
+  }
+  .error{
+    line-height: 18px!important;
+    margin-top: 5%!important;
+  }
+  .submit{
+    width: 60%!important;
+  }
+  .back{
+    width: 40%!important;
+    font-size: 20px!important;
+  }
 }
