@@ -123,6 +123,7 @@
 
 
 .loaderDetail {
+  position: relative;
   width: 120px;
   height: 90px;
   margin-top: 50%;
