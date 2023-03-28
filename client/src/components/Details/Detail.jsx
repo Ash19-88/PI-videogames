@@ -45,7 +45,7 @@ export default function Detail() {
         </div>
       </div>
       ): (<div className={style.loaderBox}>
-            <span className={style.loaderDetail}></span>
+            <span className={style.loader}></span>
             </div>
          )}
     </div>
