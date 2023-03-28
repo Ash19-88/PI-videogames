@@ -16,7 +16,7 @@ export default function Detail() {
   }, [dispatch, id]);
 
   const shownVg = useSelector((state) => state.detail);
-  if (!shownVg.length) {
+  if (shownVg.length < 0) {
     <span className={style.loaderDetail}></span>
   }
 
