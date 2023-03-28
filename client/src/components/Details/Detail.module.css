@@ -123,7 +123,9 @@
 
 .loaderBox{
 	margin-top: 25%;
-	margin-right: 15%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .loader {
   position: relative;
