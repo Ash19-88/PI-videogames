@@ -16,9 +16,6 @@ export default function Detail() {
   }, [dispatch, id]);
 
   const shownVg = useSelector((state) => state.detail);
-  if (!shownVg.length) {
-    <span className={style.loaderDetail}></span>
-  }
 
   return (
     <div className={style.detailContainer}>
@@ -27,7 +24,7 @@ export default function Detail() {
       <p>Go Back</p>
       </Link>
       </div>
-      {shownVg.length  (
+      {shownVg.length ? (
       <div className={style.main}>
         <div className={style.left}>
         <div className={style.info}>
@@ -47,7 +44,7 @@ export default function Detail() {
           ): <img alt="default" src={videogames} />}
         </div>
       </div>
-      )}
+      ): (<span className={style.loaderDetail}></span>)}
     </div>
   )
 };
