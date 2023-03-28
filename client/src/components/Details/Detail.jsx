@@ -44,7 +44,10 @@ export default function Detail() {
           ): <img alt="default" src={videogames} />}
         </div>
       </div>
-      ): (<span className={style.loaderDetail}></span>)}
+      ): (<div className="loaderBox">
+            <span className={style.loaderDetail}></span>
+            </div>
+         )}
     </div>
   )
 };
