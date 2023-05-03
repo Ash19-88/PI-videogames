@@ -4,6 +4,10 @@ import LandingPage from "./components/Landing/LandingPage";
 import Home from "./components/Home/Home";
 import Detail from "./components/Details/Detail";
 import CreateVideogame from "./components/Form/CreateVideogame";
+import axios from "axios";
+
+axios.defaults.baseURL = "http://localhost:3001";
+// axios.defaults.baseURL = '';
 
 function App() {
   return (

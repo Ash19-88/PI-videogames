@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "../Cards/Cards";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Card from "../Cards/Card";
 import Pagination from "./Pagination";
 import {
@@ -30,7 +30,7 @@ export default function Cards() {
   const currentGames = allVideogames.slice(firstGameIndex, lastGameIndex);
 
   /* -- empty states to renderize order -- */
-  const [ order, setOrder] = useState("");
+  const [order, setOrder] = useState("");
 
   useEffect(() => {
     dispatch(getVideogames());
@@ -54,8 +54,8 @@ export default function Cards() {
   const handlerFilterSource = (e) => {
     e.preventDefault();
     dispatch(filterBySource(e.target.value));
-    dispatch(setPage(1))
-  }
+    dispatch(setPage(1));
+  };
 
   const handlerOrderByName = (e) => {
     dispatch(orderByName(e.target.value));
@@ -72,40 +72,46 @@ export default function Cards() {
   return (
     <div className={style.cards}>
       <div className={style.filtersContainer}>
-      <select className={style.orderAlpha} onChange={handlerOrderByName}>
-        <option className={style.option}>Sort by Alphabet</option>
-        <option value="ASC">From A to Z</option>
-        <option>From Z to A</option>
-      </select>
-      <select className={style.orderRating} onChange={handlerOrderByRating}>
-        <option hidden className="option">
-          Sort by Rating
-        </option>
-        <option value="MIN">Worst Rated</option>
-        <option value="MAX">Best Rated</option>
-      </select>
-      <select
-        className={style.optionGenre}
-        onChange={(e) => handlerFilterByGenre(e)}
-      >
-        <option hidden value="All">
-          {" "}
-          Filter by Genre{" "}
-        </option>
-        {allGenres?.map((g) => (
-          <option key={g.name} value={g.name}>
-            {g.name[0].toUpperCase() + g.name.slice(1)}
+        <select className={style.orderAlpha} onChange={handlerOrderByName}>
+          <option className={style.option}>Sort by Alphabet</option>
+          <option value="ASC">From A to Z</option>
+          <option>From Z to A</option>
+        </select>
+        <select className={style.orderRating} onChange={handlerOrderByRating}>
+          <option hidden className="option">
+            Sort by Rating
           </option>
-        ))}
-      </select>
-      <select className={style.optionGenre} onChange={(e) => handlerFilterSource(e)} >
-        <option hidden value="All"> Filter By Source </option>
+          <option value="MIN">Worst Rated</option>
+          <option value="MAX">Best Rated</option>
+        </select>
+        <select
+          className={style.optionGenre}
+          onChange={(e) => handlerFilterByGenre(e)}
+        >
+          <option hidden value="All">
+            {" "}
+            Filter by Genre{" "}
+          </option>
+          {allGenres?.map((g) => (
+            <option key={g.name} value={g.name}>
+              {g.name[0].toUpperCase() + g.name.slice(1)}
+            </option>
+          ))}
+        </select>
+        <select
+          className={style.optionGenre}
+          onChange={(e) => handlerFilterSource(e)}
+        >
+          <option hidden value="All">
+            {" "}
+            Filter By Source{" "}
+          </option>
           <option value="DB"> Created </option>
-          <option value='API'> From API </option>
-      </select>
+          <option value="API"> From API </option>
+        </select>
       </div>
       <br />
-      
+
       <Pagination
         videogamesPerPage={videogamesPerPage}
         allVideogames={allVideogames.length}
@@ -117,9 +123,9 @@ export default function Cards() {
         {currentGames.length > 0 ? (
           currentGames.map((game) => {
             return (
-              <Link
+              <NavLink
                 key={game.id}
-                to={`videogames/${game.id}`}
+                to={`/videogames/${game.id}`}
                 style={{ textDecoration: "none" }}
               >
                 <Card
@@ -130,11 +136,11 @@ export default function Cards() {
                   background_image={game.background_image}
                   genres={game.genres}
                 />
-              </Link>
+              </NavLink>
             );
           })
         ) : (
-              <span className={style.loader}></span>
+          <span className={style.loader}></span>
         )}
       </div>
     </div>
