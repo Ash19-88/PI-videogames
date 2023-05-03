@@ -317,4 +317,12 @@
     width: 40%!important;
     font-size: 20px!important;
   }
+  .div{
+  position: absolute!important;
+  height: auto!important;
+  }
+  .boxCreate{
+  display: flex;
+  flex-direction: column!important;
+  }
 }
