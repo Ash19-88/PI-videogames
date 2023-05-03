@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import style from "./CreateVideogame.module.css";
 import { createVideogame, getGenres, getVideogames } from "../../redux/actions";
@@ -42,7 +43,7 @@ const validate = (input) => {
   if (!input.rating.length) {
     error.rating = "This field cannot be empty";
   }
-  
+
   if (input.rating < 1 || input.rating > 5) {
     error.rating = "Rating must be between 1 and 5";
   }
@@ -53,7 +54,7 @@ export default function CreateVideogame() {
   const dispatch = useDispatch();
   const genres = useSelector((state) => state.genres);
   const all = useSelector((state) => state.allVideogames);
-  const history = useHistory();
+  const history = useNavigate();
   const [error, setError] = useState({});
 
   const [input, setInput] = useState({
@@ -174,150 +175,165 @@ export default function CreateVideogame() {
         <div className={style.container}>
           <h1 className={style.title}> Create your Videogame </h1>
           <div className={style.boxCreate}>
-          <div className={style.left}>
-          <div className={style.group}>
-            <input
-              type="text"
-              value={input.name}
-              name="name"
-              autoComplete="off"
-              onChange={(e) => handleChange(e)}
-              className={style.input}
-            />{" "}
-            <label className={style.label}> Name: </label>
-            {error.name && <p className={style.error}>{error.name}</p>}
-          </div>
-
-          <div className={style.group}>
-            <input
-              type="text"
-              value={input.background_image}
-              name="background_image"
-              onChange={handleChange}
-              className={style.input}
-            />
-            <label className={style.label}> Add an image URL</label>
-            {error.background_image && (
-              <p className={style.error}>{error.background_image}</p>
-            )}
-          </div>
-
-          <div className={style.group}>
-            <input
-              className={style.input}
-              type="date"
-              min="1990-01-31"
-              max="2023-01-31"
-              value={input.released}
-              name="released"
-              step="1"
-              onChange={handleChange}
-              autoComplete="off"
-            />
-            <label className={style.label}>Released: </label>
-            {error.released && <p className={style.error}>{error.released}</p>}
-          </div>
-
-          <div className={style.group}>
-            <input
-              className={style.input}
-              type="number"
-              min="1"
-              max="5"
-              value={input.rating}
-              name="rating"
-              onChange={handleChange}
-            />
-            <label className={style.label}>Rating: </label>
-            {error.rating && <p className={style.error}>{error.rating}</p>}
-          </div>
-          </div>
-
-          <div className={style.right}>
-          <div className={style.group}>
-            <select
-              onChange={(e) => handleSelectPlatform(e)}
-              className={style.select}
-            >
-              <option className={style.option} value="" disabled hidden>Choose Platforms..</option>
-              {platforms.map((p) => (
-                <option
-                  key={p}
-                  value={p}
-                  className={style.option}
-                >{p}</option>
-              ))}
-            </select>
-            <label className={style.label}>Platforms: </label>
-            {input.platforms.map((p) => (
-              <div className={style.map}>
-                <div className={style.option_title}>
-                  {p}
-                </div>
-                <button
-                  className={style.btnx}
-                  onClick={() => handleCleanPlatform(p)}
-                  key={p}
-                  value={p}
-                ><span className={style.x}>X</span></button>
+            <div className={style.left}>
+              <div className={style.group}>
+                <input
+                  type="text"
+                  value={input.name}
+                  name="name"
+                  autoComplete="off"
+                  onChange={(e) => handleChange(e)}
+                  className={style.input}
+                />{" "}
+                <label className={style.label}> Name: </label>
+                {error.name && <p className={style.error}>{error.name}</p>}
               </div>
-            ))}
-          </div>
 
-          <div className={style.group}>
-              <select onChange={(e) => handleSelectGenre(e)} className={style.select}>
-              <option className={style.option} value="" disabled hidden>Choose Genres..</option>
-                {genres.map((g) => (
-                  <option
-                    key={g}
-                    value={g.name}
-                    name="genres"
-                    onChange={handleChange}
-                    className={style.option}
-                  >{g.name}</option>
+              <div className={style.group}>
+                <input
+                  type="text"
+                  value={input.background_image}
+                  name="background_image"
+                  onChange={handleChange}
+                  className={style.input}
+                />
+                <label className={style.label}> Add an image URL</label>
+                {error.background_image && (
+                  <p className={style.error}>{error.background_image}</p>
+                )}
+              </div>
+
+              <div className={style.group}>
+                <input
+                  className={style.input}
+                  type="date"
+                  min="1990-01-31"
+                  max="2023-01-31"
+                  value={input.released}
+                  name="released"
+                  step="1"
+                  onChange={handleChange}
+                  autoComplete="off"
+                />
+                <label className={style.label}>Released: </label>
+                {error.released && (
+                  <p className={style.error}>{error.released}</p>
+                )}
+              </div>
+
+              <div className={style.group}>
+                <input
+                  className={style.input}
+                  type="number"
+                  min="1"
+                  max="5"
+                  value={input.rating}
+                  name="rating"
+                  onChange={handleChange}
+                />
+                <label className={style.label}>Rating: </label>
+                {error.rating && <p className={style.error}>{error.rating}</p>}
+              </div>
+            </div>
+
+            <div className={style.right}>
+              <div className={style.group}>
+                <select
+                  onChange={(e) => handleSelectPlatform(e)}
+                  className={style.select}
+                >
+                  <option className={style.option} value="" disabled hidden>
+                    Choose Platforms..
+                  </option>
+                  {platforms.map((p) => (
+                    <option key={p} value={p} className={style.option}>
+                      {p}
+                    </option>
+                  ))}
+                </select>
+                <label className={style.label}>Platforms: </label>
+                {input.platforms.map((p) => (
+                  <div className={style.map}>
+                    <div className={style.option_title}>{p}</div>
+                    <button
+                      className={style.btnx}
+                      onClick={() => handleCleanPlatform(p)}
+                      key={p}
+                      value={p}
+                    >
+                      <span className={style.x}>X</span>
+                    </button>
+                  </div>
                 ))}
-              </select>
-            <label className={style.label}>Genres: </label>
-            {input.genres.map((g) => (
-              <div className={style.map}>
-                <div className={style.option_title}>{g}</div>
-                <button
-                  className={style.btnx}
-                  onClick={() => handleCleanGenre(g)}
-                  key={g}
-                  value={g}
-                ><span className={style.x}>X</span></button>
               </div>
-            ))}
+
+              <div className={style.group}>
+                <select
+                  onChange={(e) => handleSelectGenre(e)}
+                  className={style.select}
+                >
+                  <option className={style.option} value="" disabled hidden>
+                    Choose Genres..
+                  </option>
+                  {genres.map((g) => (
+                    <option
+                      key={g}
+                      value={g.name}
+                      name="genres"
+                      onChange={handleChange}
+                      className={style.option}
+                    >
+                      {g.name}
+                    </option>
+                  ))}
+                </select>
+                <label className={style.label}>Genres: </label>
+                {input.genres.map((g) => (
+                  <div className={style.map}>
+                    <div className={style.option_title}>{g}</div>
+                    <button
+                      className={style.btnx}
+                      onClick={() => handleCleanGenre(g)}
+                      key={g}
+                      value={g}
+                    >
+                      <span className={style.x}>X</span>
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+              <div className={style.group}>
+                <textarea
+                  className={style.textareacr}
+                  required
+                  type="text"
+                  value={input.description}
+                  name="description"
+                  placeholder="Your videogame it's about..."
+                  onChange={handleChange}
+                />
+                <label className={style.description}> Description: </label>
+                {error.description && (
+                  <p className={style.error}>{error.description}</p>
+                )}
+              </div>
+            </div>
           </div>
 
-          <div className={style.group}>
-            <textarea
-              className={style.textareacr}
-              required
-              type="text"
-              value={input.description}
-              name="description"
-              placeholder="Your videogame it's about..."
-              onChange={handleChange}
-            />
-            <label className={style.description}> Description: </label>
-            {error.description && (
-              <p className={style.error}>{error.description}</p>
-            )}
-          </div>
-            </div>
-            </div>
-            
           <div>
-          <button onSubmit={handleSubmit} className={style.submit}>
-            CREATE VIDEOGAME
-          </button>
+            <button onSubmit={handleSubmit} className={style.submit}>
+              CREATE VIDEOGAME
+            </button>
           </div>
           <div className={style.home}>
-          <Link to="/home" style={{textDecoration: "none"}}  onClick={(e) => handleRefresh(e)}>
-            <button className={style.back}> CANCEL </button>
-          </Link>
+            <NavLink
+              to="/home"
+              style={{ textDecoration: "none" }}
+              onClick={(e) => handleRefresh(e)}
+            >
+              <button className={style.back}> CANCEL </button>
+            </NavLink>
           </div>
         </div>
       </form>

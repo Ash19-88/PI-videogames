@@ -1,24 +1,23 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
 import { store } from "./store/index";
-import axios from 'axios';
+import axios from "axios";
 
-// axios.defaults.baseURL = 'http://localhost:3001';
-axios.defaults.baseURL = 'https://pi-videogames-production-0ec8.up.railway.app';
+axios.defaults.baseURL = "http://localhost:3001";
+// axios.defaults.baseURL = '';
 
+const root = document.getElementById("root");
 
-
-ReactDOM.render(
+createRoot(root).render(
   <Provider store={store}>
     <React.StrictMode>
       <App />
     </React.StrictMode>
-  </Provider>,
-  document.getElementById("root")
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
