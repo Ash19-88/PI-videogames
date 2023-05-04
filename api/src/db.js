@@ -4,11 +4,6 @@ const fs = require("fs");
 const path = require("path");
 // const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME, DB_PORT } = process.env;
 const { DATABASE_URL } = process.env;
-const pgSsl = require("pg-ssl");
-
-pg.defaults.ssl = true;
-pg.ssl = true;
-pg.sslMode = pgSsl;
 
 const sequelize = new Sequelize(`${DATABASE_URL}`, {
   logging: false, // set to console.log to see the raw SQL queries
