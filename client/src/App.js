@@ -7,7 +7,7 @@ import CreateVideogame from "./components/Form/CreateVideogame";
 import axios from "axios";
 
 // axios.defaults.baseURL = "http://localhost:3001";
-axios.defaults.baseURL = "https://videogames-klev.onrender.com";
+axios.defaults.baseURL = "https://videogames-ttie.onrender.com";
 
 function App() {
   return (
